@@ -3,53 +3,57 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFlag } from '@fortawesome/free-solid-svg-icons'
 
-export const Country = ({ icon }) => {
+export const Country = () => {
   const [data, setData] = useState([])
+  const [countries] = useState([{ name: 'Poland' }, { name: 'USA' }, { name: 'Germany' }, { name: 'Spain' }, { name: 'UK' }, { name: 'Belgium' }, { name: 'Canada' }, { name: 'Czechia' }])
 
-  // useEffect(() => {}, [])
+  useEffect(() => {
+    axios.get(`https://coronavirus-19-api.herokuapp.com/countries/${countries[0].name}`)
+      .then(res => {
+        setData(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [countries])
 
   const handleChange = (event) => {
-    console.log(`handleChange: ${event.target.value}`)
     axios.get(`https://coronavirus-19-api.herokuapp.com/countries/${event.target.value}`)
       .then(res => {
         setData(res.data)
-        console.log(res.data)
       })
+      .catch(err => {
+        console.log(err)
+    })
   }
 
   const Select = () => {
     return (
       <select className='select' value={data.country} onChange={handleChange}>
-        <option>Choose a country...</option>
-        <option>Poland</option>
-        <option>USA</option>
-        <option>Germany</option>
-        <option>Spain</option>
-        <option>UK</option>
-        <option>Italy</option>
-        <option>France</option>
-        <option>Czechia</option>
+        {countries.map(country =>
+          (<option key={`key-${country.name}`} value={country.name}>{country.name}</option>))}
       </select>
     )
   }
 
+  //  function adds space between every 3 digits
+  const numbersFormatting = (number) => {
+    return [number].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')
+  }
+
   return (
     <div className='country'>
-      <h3>{icon} <Select /></h3>
+      <h3><FontAwesomeIcon icon={faFlag} /> <Select /></h3>
       <h4>Today cases:</h4>
-      <p>{[data.todayCases].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')}</p>
+      <p>{numbersFormatting(data.todayCases)}</p>
       <h4>Today deaths:</h4>
-      <p>{[data.todayDeaths].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')}</p>
+      <p>{numbersFormatting(data.todayDeaths)}</p>
       <h4>Overall cases:</h4>
-      <p>{[data.cases].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')}</p>
+      <p>{numbersFormatting(data.cases)}</p>
       <h4>Overall deaths:</h4>
-      <p>{[data.deaths].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')}</p>
+      <p>{numbersFormatting(data.deaths)}</p>
       <h4>Overall recovered:</h4>
-      <p>{[data.recovered].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')}</p>
+      <p>{numbersFormatting(data.recovered)}</p>
     </div>
   )
-}
-
-Country.defaultProps = {
-  icon: <FontAwesomeIcon icon={faFlag} />
 }
