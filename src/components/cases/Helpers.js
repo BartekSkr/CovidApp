@@ -1,2 +1,2 @@
 //  function adds space every 3 digits
-export const DataFormat = (number) => [number].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+export const dataFormat = (number) => [number].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
