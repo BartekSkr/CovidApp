@@ -13,3 +13,5 @@ API used in this app is from https://github.com/javieraviles/covidAPI COVID API.
 ## Setup
 
 To run the app click link below:
+
+netlify-covid-app.netlify.app
