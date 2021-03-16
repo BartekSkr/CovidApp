@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFlag } from '@fortawesome/free-solid-svg-icons'
+import { dataFormat } from './helpers'
 
 export const Country = () => {
   const [data, setData] = useState([])
@@ -36,24 +37,19 @@ export const Country = () => {
     )
   }
 
-  //  function adds space between every 3 digits
-  const numbersFormatting = (number) => {
-    return [number].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')
-  }
-
   return (
     <div className='country'>
       <h3><FontAwesomeIcon icon={faFlag} /> <Select /></h3>
       <h4>Today cases:</h4>
-      <p>{numbersFormatting(data.todayCases)}</p>
+      <p>{dataFormat(data.todayCases)}</p>
       <h4>Today deaths:</h4>
-      <p>{numbersFormatting(data.todayDeaths)}</p>
+      <p>{dataFormat(data.todayDeaths)}</p>
       <h4>Overall cases:</h4>
-      <p>{numbersFormatting(data.cases)}</p>
+      <p>{dataFormat(data.cases)}</p>
       <h4>Overall deaths:</h4>
-      <p>{numbersFormatting(data.deaths)}</p>
+      <p>{dataFormat(data.deaths)}</p>
       <h4>Overall recovered:</h4>
-      <p>{numbersFormatting(data.recovered)}</p>
+      <p>{dataFormat(data.recovered)}</p>
     </div>
   )
 }

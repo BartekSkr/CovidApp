@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { Spinner } from '../layout/Spinner'
+import { dataFormat } from './helpers'
 
 export const Global = () => {
   let [globalData, setGlobalData] = useState([])
@@ -20,11 +21,6 @@ export const Global = () => {
     })
   }, [])
 
-  //  function adds space between every 3 digits
-  const numbersFormatting = (number) => {
-    return [number].toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')
-  }
-
   if (loading) {
     return <Spinner />
   } else {
@@ -32,11 +28,11 @@ export const Global = () => {
       <div className='world'>
         <h3> <FontAwesomeIcon icon={faGlobe} /> WORLD</h3>
           <h4>Overall cases:</h4>
-          <p>{numbersFormatting(globalData.cases)}</p>
+          <p>{dataFormat(globalData.cases)}</p>
           <h4>Overall deaths:</h4>
-          <p>{numbersFormatting(globalData.deaths)}</p>
+          <p>{dataFormat(globalData.deaths)}</p>
           <h4>Overall recovered:</h4>
-          <p>{numbersFormatting(globalData.recovered)}</p>
+          <p>{dataFormat(globalData.recovered)}</p>
       </div>
     )
   }
