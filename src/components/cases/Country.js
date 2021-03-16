@@ -6,7 +6,21 @@ import { dataFormat } from './helpers'
 
 export const Country = () => {
   const [data, setData] = useState([])
-  const [countries] = useState([{ name: 'Poland' }, { name: 'USA' }, { name: 'Germany' }, { name: 'Spain' }, { name: 'UK' }, { name: 'Belgium' }, { name: 'Canada' }, { name: 'Czechia' }])
+  const [countries] = useState([
+    { name: 'Poland' },
+    { name: 'Austria' },
+    { name: 'Belgium' },
+    { name: 'Canada' },
+    { name: 'Croatia' },
+    { name: 'Czechia' },
+    { name: 'Germany' },
+    { name: 'Israel' },
+    { name: 'Japan' },
+    { name: 'Spain' },
+    { name: 'Switzerland' },
+    { name: 'UK' },
+    { name: 'USA' }
+  ])
 
   useEffect(() => {
     axios.get(`https://coronavirus-19-api.herokuapp.com/countries/${countries[0].name}`)
