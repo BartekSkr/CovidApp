@@ -93,3 +93,21 @@ body {
 .fragment :is(h1, p) {
   margin-bottom: 1rem;
 }
+
+/* Smaller screens */
+@media (min-width: 900px){
+  /* Container */
+  .container{
+    display: flex;
+    max-width: 700px;
+    height: 315px;
+  }
+
+  .world,
+  .country{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 50%;
+    height: 100%;
+  }
+}
