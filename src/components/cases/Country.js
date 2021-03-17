@@ -61,15 +61,15 @@ export const Country = () => {
     return (
       <div className='country'>
         <h3><FontAwesomeIcon icon={faFlag} /> <Select /></h3>
-        <h4>Today cases:</h4>
+        <h4>Today's cases:</h4>
         <p>{dataFormat(data.todayCases)}</p>
-        <h4>Today deaths:</h4>
+        <h4>Today's deaths:</h4>
         <p>{dataFormat(data.todayDeaths)}</p>
-        <h4>Overall cases:</h4>
+        <h4>Total cases:</h4>
         <p>{dataFormat(data.cases)}</p>
-        <h4>Overall deaths:</h4>
+        <h4>Total deaths:</h4>
         <p>{dataFormat(data.deaths)}</p>
-        <h4>Overall recovered:</h4>
+        <h4>Total recovered:</h4>
         <p>{dataFormat(data.recovered)}</p>
       </div>
     )

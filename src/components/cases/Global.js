@@ -27,11 +27,11 @@ export const Global = () => {
     return (
       <div className='world'>
         <h3> <FontAwesomeIcon icon={faGlobe} /> WORLD</h3>
-          <h4>Overall cases:</h4>
+          <h4>Total cases:</h4>
           <p>{dataFormat(globalData.cases)}</p>
-          <h4>Overall deaths:</h4>
+          <h4>Total deaths:</h4>
           <p>{dataFormat(globalData.deaths)}</p>
-          <h4>Overall recovered:</h4>
+          <h4>Total recovered:</h4>
           <p>{dataFormat(globalData.recovered)}</p>
       </div>
     )
