@@ -2,7 +2,7 @@
 
 ## General info
 
-The app shows the overall and daily infection counts for Covid-19.
+The app shows daily and total Covid-19 cases in selected countries.
 
 ## Technologies
 
