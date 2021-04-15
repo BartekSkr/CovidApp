@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFlag } from '@fortawesome/free-solid-svg-icons'
-import { dataFormat } from './helpers'
+import { dataFormat } from '../utils/helpers'
 import { Spinner } from '../layout/Spinner'
 
 export const Country = () => {
