@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { Spinner } from '../layout/Spinner'
-import { dataFormat } from './helpers'
+import { dataFormat } from '../utils/helpers'
 
 export const Global = () => {
   let [globalData, setGlobalData] = useState([])
