@@ -95,17 +95,16 @@ body {
 }
 
 /* Smaller screens */
-@media (min-width: 900px){
+@media (min-width: 900px) {
   /* Container */
-  .container{
+  .container {
     display: flex;
     max-width: 700px;
     height: 315px;
-
   }
 
   .world,
-  .country{
+  .country {
     margin-left: 1rem;
     margin-right: 1rem;
     width: 50%;
