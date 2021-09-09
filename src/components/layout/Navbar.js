@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVirus } from '@fortawesome/free-solid-svg-icons'
@@ -12,7 +12,6 @@ export const Navbar = ({ icon, title }) => {
       </h1>
       <ul>
         <li className='navbar-li'>
-          {/* <Link to='/'>Home</Link> */}
           <NavLink
             className='navbar-link'
             activeClassName='navbar-link-active'
@@ -21,7 +20,6 @@ export const Navbar = ({ icon, title }) => {
           </NavLink>
         </li>
         <li className='navbar-li'>
-          {/* <Link to='/about'>About</Link> */}
           <NavLink
             className='navbar-link'
             activeClassName='navbar-link-active'
