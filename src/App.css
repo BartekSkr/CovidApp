@@ -39,20 +39,23 @@ body {
   justify-content: center;
 }
 
-.navbar li {
+.navbar-li {
   transition: all 0.2s ease-in-out;
 }
 
-.navbar a {
-  margin: 0 0.5rem;
+.navbar-link {
+  margin: 0 1rem;
   color: whitesmoke;
   text-decoration: none;
 }
 
-.navbar li:hover {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.76);
-  transform: scale(1.1);
+.navbar-li:hover {
+  transform: scale(1.2);
   transition: all 0.2s ease-in-out;
+}
+
+.navbar-link-active {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.76);
 }
 
 /* Container */
