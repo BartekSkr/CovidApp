@@ -13,17 +13,15 @@ export const Navbar = ({ icon, title }) => {
       <ul>
         <li className='navbar-li'>
           <NavLink
-            className='navbar-link'
-            activeClassName='navbar-link-active'
-            exact to='/'>
+            className={navData => navData.isActive ? 'navbar-link-active' : 'navbar-link'}
+            to='/'>
             Home
           </NavLink>
         </li>
         <li className='navbar-li'>
           <NavLink
-            className='navbar-link'
-            activeClassName='navbar-link-active'
-            exact to='about'>
+            className={navData => navData.isActive ? 'navbar-link-active' : 'navbar-link'}
+            to='about'>
             About
           </NavLink>
         </li>

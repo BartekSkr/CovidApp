@@ -55,6 +55,9 @@ body {
 }
 
 .navbar-link-active {
+  margin: 0 1rem;
+  color: whitesmoke;
+  text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.76);
 }
 
