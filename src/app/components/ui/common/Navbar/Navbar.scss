@@ -1,0 +1,44 @@
+@import '../../../../helpers/vars';
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: block;
+  padding: 1rem 2rem;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  background-color: black;
+  margin-bottom: 2rem;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    li {
+      transition: all 0.2s ease-in-out;
+
+      .navbar-link {
+        margin: 0 1rem;
+        color: var(--light-font-color);
+        text-decoration: none;
+
+        &-active {
+          margin: 0 1rem;
+          color: var(--light-font-color);
+          text-decoration: none;
+          border-bottom: 1px solid var(--light-font-color);
+        }
+      }
+
+      &:hover {
+        transform: scale(1.2);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}

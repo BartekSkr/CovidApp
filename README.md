@@ -1,17 +1,11 @@
-# Covid App
-
 ## General info
 
-The app shows daily and total Covid-19 cases in selected countries.
+The application presents cases of covid disease in individual countries as well as in the world in general.
 
 ## Technologies
 
-App has been created with React.js.
+App has been created with React.js. and TypeScript.
 
-API used in this app is from https://github.com/javieraviles/covidAPI COVID API.
+This project was bootstrapped with [Create React App](https://create-react-app.dev/docs/getting-started).
 
-## Setup
-
-To run the app click link below:
-
-https://netlify-covid-app.netlify.app
+API used in this app is from [COVID API](https://github.com/javieraviles/covidAPI).

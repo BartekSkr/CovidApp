@@ -1,0 +1,16 @@
+@import '../src/app/helpers/vars';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: var(--main-background-color);
+  color: var(--light-font-color);
+  letter-spacing: 0.12rem;
+}
