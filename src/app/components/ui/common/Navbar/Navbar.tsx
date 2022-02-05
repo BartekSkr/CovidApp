@@ -1,40 +1,51 @@
-import './Navbar.scss'
-import { faVirus } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import './Navbar.scss';
+import { faVirus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
-interface DefaultProps { icon?: JSX.Element, title?: string }
+interface DefaultProps {
+  icon?: JSX.Element;
+  title?: string;
+}
 
 export const Navbar: React.FC<DefaultProps> = ({ icon, title }) => {
   return (
-    <div className='navbar'>
-      <h1>{icon} {title}</h1>
+    <main className='navbar'>
+      <h1>
+        {icon} {title}
+      </h1>
       <ul>
         <li className='navbar-li'>
           <NavLink
-            className={navData => navData.isActive ? 'navbar-link-active' : 'navbar-link'}
+            className={(navData) =>
+              navData.isActive ? 'navbar-link-active' : 'navbar-link'
+            }
             to='/home'
           >
-            Home</NavLink>
+            Home
+          </NavLink>
         </li>
         <li className='navbar-li'>
           <NavLink
-            className={navData => navData.isActive ? 'navbar-link-active' : 'navbar-link'}
+            className={(navData) =>
+              navData.isActive ? 'navbar-link-active' : 'navbar-link'
+            }
             to='/about'
           >
-            About</NavLink>
+            About
+          </NavLink>
         </li>
       </ul>
-    </div>
-  )
-}
+    </main>
+  );
+};
 
 Navbar.defaultProps = {
   title: 'COVID-19 info',
-  icon: <FontAwesomeIcon icon={faVirus} />
-}
+  icon: <FontAwesomeIcon icon={faVirus} />,
+};
 
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,
-}
+};

@@ -1,56 +1,43 @@
 @import '../../helpers/vars';
 
-.container {
-  max-width: 500px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
+.global,
+.country {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
 
-  .global,
-  .country {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 1rem;
-
-    p {
-      margin-left: 0.7rem;
-    }
-
-    h3 {
-      position: relative;
-
-      .select {
-        height: 1.5rem;
-        min-width: 9rem;
-        border-radius: 5px;
-        color: var(--light-font-color);
-        background: var(--main-background-color);
-        cursor: pointer;
-        outline: none;
-        text-indent: 0.5rem;
-        position: absolute;
-        top: 0.1rem;
-        left: 1.7rem;
-      }
-    }
+  p {
+    margin-left: 0.7rem;
   }
 
-  .global {
-    margin-bottom: 2rem;
+  h3 {
+    position: relative;
+
+    .select {
+      height: 1.5rem;
+      min-width: 9rem;
+      border-radius: 5px;
+      color: var(--light-font-color);
+      background: var(--main-background-color);
+      cursor: pointer;
+      outline: none;
+      text-indent: 0.5rem;
+      position: absolute;
+      top: 0.1rem;
+      left: 1.7rem;
+    }
   }
 }
 
-@media (min-width: 900px) {
-  .container {
-    display: flex;
-    max-width: 700px;
-    height: 315px;
+.global {
+  margin-bottom: 2rem;
+}
 
-    .global,
-    .country {
-      margin-left: 1rem;
-      margin-right: 1rem;
-      width: 50%;
-      height: 100%;
-    }
+@media (min-width: 900px) {
+  .global,
+  .country {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 50%;
+    height: 100%;
   }
 }
