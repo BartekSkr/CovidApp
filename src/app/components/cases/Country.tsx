@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Spinner } from '../ui/common/Spinner/Spinner';
 import { dataFormat } from '../../helpers/helpers';
+import axios from 'axios';
 
 interface CountryDataInterface {
   countryData: {
@@ -15,23 +16,6 @@ interface CountryDataInterface {
     recovered: number;
   };
 }
-
-const countries: { name: string }[] = [
-  { name: 'Poland' },
-  { name: 'Austria' },
-  { name: 'Belgium' },
-  { name: 'Canada' },
-  { name: 'Croatia' },
-  { name: 'Czechia' },
-  { name: 'Denmark' },
-  { name: 'Germany' },
-  { name: 'Israel' },
-  { name: 'Japan' },
-  { name: 'Spain' },
-  { name: 'Switzerland' },
-  { name: 'UK' },
-  { name: 'USA' },
-];
 
 export const Country: React.FC = () => {
   const [countryData, setCountryData] = useState<
@@ -45,29 +29,38 @@ export const Country: React.FC = () => {
     recovered: 0,
   });
   const [loading, setLoading] = useState<boolean>(false);
+  const [countries, setCountries] = useState<string[]>([]);
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `https://coronavirus-19-api.herokuapp.com/countries/${countries[0].name}`
-    )
-      .then((res) => res.json())
-      .then((data: CountryDataInterface['countryData']) => {
-        setCountryData(data);
+    axios
+      .all([
+        axios.get(`https://coronavirus-19-api.herokuapp.com/countries`),
+        axios.get(`https://coronavirus-19-api.herokuapp.com/countries/usa`),
+      ])
+      .then((res) => {
+        setCountries(
+          res[0].data
+            .splice(1)
+            .map(
+              (country: CountryDataInterface['countryData']) => country.country
+            )
+        );
+        setCountryData(res[1].data);
         setLoading(false);
       })
-      .catch((err: Error) => console.error(err));
+      .catch((error: Error) => console.error(error));
   }, []);
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>): void => {
-    fetch(
-      `https://coronavirus-19-api.herokuapp.com/countries/${e.target.value}`
-    )
-      .then((res) => res.json())
-      .then((data: CountryDataInterface['countryData']) => {
-        setCountryData(data);
+    axios
+      .get(
+        `https://coronavirus-19-api.herokuapp.com/countries/${e.target.value}`
+      )
+      .then((res) => {
+        setCountryData(res.data);
       })
-      .catch((err: Error) => console.error(err));
+      .catch((error: Error) => console.error(error));
   };
 
   const Select = () => {
@@ -78,8 +71,8 @@ export const Country: React.FC = () => {
         onChange={handleChange}
       >
         {countries.map((country) => (
-          <option key={`key-${country.name}`} value={country.name}>
-            {country.name}
+          <option key={`key-${country}`} value={country}>
+            {country}
           </option>
         ))}
       </select>

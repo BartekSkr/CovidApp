@@ -1,40 +1,50 @@
-import './Cases.scss'
-import { faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useEffect, useState } from 'react'
-import { Spinner } from '../ui/common/Spinner/Spinner'
-import { dataFormat } from '../../helpers/helpers'
+import './Cases.scss';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect, useState } from 'react';
+import { Spinner } from '../ui/common/Spinner/Spinner';
+import { dataFormat } from '../../helpers/helpers';
+import axios from 'axios';
 
 interface GlobalDataInterface {
   globalData: {
     cases: number;
     deaths: number;
-    recovered: number
-  }
+    recovered: number;
+    todayCases: number;
+    todayDeaths: number;
+  };
 }
 
 export const Global: React.FC = () => {
-  const [globalData, setGlobalData] = useState<GlobalDataInterface['globalData']>(
-    { cases: 0, deaths: 0, recovered: 0 })
-  const [loading, setLoading] = useState<boolean>(false)
+  const [globalData, setGlobalData] = useState<
+    GlobalDataInterface['globalData']
+  >({ cases: 0, deaths: 0, recovered: 0, todayCases: 0, todayDeaths: 0 });
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    setLoading(true)
-    fetch('https://coronavirus-19-api.herokuapp.com/all')
-      .then(res => res.json())
-      .then((data: GlobalDataInterface['globalData']) => {
-        setGlobalData(data)
-        setLoading(false)
+    setLoading(true);
+    axios
+      .get(`https://coronavirus-19-api.herokuapp.com/countries/world`)
+      .then((res) => {
+        setGlobalData(res.data);
+        setLoading(false);
       })
-      .catch((err: Error) => console.error(err))
-  }, [])
+      .catch((error: Error) => console.error(error));
+  }, []);
 
   if (loading) {
-    return <Spinner />
+    return <Spinner />;
   } else {
     return (
       <main className='global'>
-        <h3><FontAwesomeIcon icon={faGlobe} /> WORLD </h3>
+        <h3>
+          <FontAwesomeIcon icon={faGlobe} /> WORLD
+        </h3>
+        <h4>Today's cases</h4>
+        <p>{dataFormat(globalData.todayCases)}</p>
+        <h4>Today's deaths</h4>
+        <p>{dataFormat(globalData.todayDeaths)}</p>
         <h4>Total cases:</h4>
         <p>{dataFormat(globalData.cases)}</p>
         <h4>Total deaths:</h4>
@@ -42,6 +52,6 @@ export const Global: React.FC = () => {
         <h4>Total recovered:</h4>
         <p>{dataFormat(globalData.recovered)}</p>
       </main>
-    )
+    );
   }
-}
+};
