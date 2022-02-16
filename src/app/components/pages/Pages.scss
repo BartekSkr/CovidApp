@@ -1,0 +1,15 @@
+@import '../../helpers/vars';
+
+.container,
+.about-container,
+.not-found-container {
+  @extend %container;
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+    max-width: 700px;
+    height: 315px;
+  }
+}

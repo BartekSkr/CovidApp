@@ -3,34 +3,24 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { Spinner } from '../ui/common/Spinner/Spinner';
-import { dataFormat } from '../../helpers/helpers';
-import axios from 'axios';
-
-interface GlobalDataInterface {
-  globalData: {
-    cases: number;
-    deaths: number;
-    recovered: number;
-    todayCases: number;
-    todayDeaths: number;
-  };
-}
+import { dataFormat } from '../../helpers/dataServices';
+import { fetchGlobalData } from '../../helpers/apiServices';
+import { GlobalDataInterface } from '../../interfaces/dataInterfaces';
 
 export const Global: React.FC = () => {
   const [globalData, setGlobalData] = useState<
     GlobalDataInterface['globalData']
-  >({ cases: 0, deaths: 0, recovered: 0, todayCases: 0, todayDeaths: 0 });
+  >({
+    cases: 0,
+    deaths: 0,
+    recovered: 0,
+    todayCases: 0,
+    todayDeaths: 0,
+  });
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    setLoading(true);
-    axios
-      .get(`https://coronavirus-19-api.herokuapp.com/countries/world`)
-      .then((res) => {
-        setGlobalData(res.data);
-        setLoading(false);
-      })
-      .catch((error: Error) => console.error(error));
+    fetchGlobalData(setLoading, setGlobalData);
   }, []);
 
   if (loading) {

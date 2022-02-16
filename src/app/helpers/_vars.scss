@@ -2,3 +2,10 @@
   --light-font-color: whitesmoke;
   --main-background-color: rgb(41, 40, 40);
 }
+
+%container {
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}

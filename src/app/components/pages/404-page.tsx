@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import './Pages.scss';
 
 export const PageNotFound = () => {
   useEffect(() => {
@@ -6,7 +7,7 @@ export const PageNotFound = () => {
   }, []);
 
   return (
-    <main className='about-404-container'>
+    <main className='not-found-container'>
       <h1>404</h1>
       <h3>Sorry, we couldn't find this page.</h3>
     </main>
