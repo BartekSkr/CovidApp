@@ -13,15 +13,13 @@ import { Home } from './app/components/pages/Home';
 function App() {
   return (
     <Router>
-      <div className='App'>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Navigate to='/home' />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='*' element={<PageNotFound />} />
-        </Routes>
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Navigate to='/home' />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
     </Router>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Country } from '../cases/Country';
 import { Global } from '../cases/Global';
+import './Pages.scss';
 
 export const Home = () => {
   useEffect(() => {

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import './Pages.scss';
 
 export const About = () => {
   useEffect(() => {
@@ -6,7 +7,7 @@ export const About = () => {
   }, []);
 
   return (
-    <main className='about-404-container'>
+    <main className='about-container'>
       <h1 style={ParagraphStyle}>About this App</h1>
       <p style={ParagraphStyle}>
         The application presents cases of covid disease in individual countries

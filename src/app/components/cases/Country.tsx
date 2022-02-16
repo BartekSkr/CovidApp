@@ -3,19 +3,11 @@ import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Spinner } from '../ui/common/Spinner/Spinner';
-import { dataFormat } from '../../helpers/helpers';
-import axios from 'axios';
-
-interface CountryDataInterface {
-  countryData: {
-    country: string;
-    todayCases: number;
-    todayDeaths: number;
-    cases: number;
-    deaths: number;
-    recovered: number;
-  };
-}
+import { dataFormat } from '../../helpers/dataServices';
+import { CountryDataInterface } from '../../interfaces/dataInterfaces';
+import { Select } from '../ui/common/Select/Select';
+import { handleOnChange } from '../../helpers/selectServices';
+import { fetchCountryData } from '../../helpers/apiServices';
 
 export const Country: React.FC = () => {
   const [countryData, setCountryData] = useState<
@@ -32,52 +24,8 @@ export const Country: React.FC = () => {
   const [countries, setCountries] = useState<string[]>([]);
 
   useEffect(() => {
-    setLoading(true);
-    axios
-      .all([
-        axios.get(`https://coronavirus-19-api.herokuapp.com/countries`),
-        axios.get(`https://coronavirus-19-api.herokuapp.com/countries/usa`),
-      ])
-      .then((res) => {
-        setCountries(
-          res[0].data
-            .splice(1)
-            .map(
-              (country: CountryDataInterface['countryData']) => country.country
-            )
-        );
-        setCountryData(res[1].data);
-        setLoading(false);
-      })
-      .catch((error: Error) => console.error(error));
+    fetchCountryData(setLoading, setCountries, setCountryData);
   }, []);
-
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>): void => {
-    axios
-      .get(
-        `https://coronavirus-19-api.herokuapp.com/countries/${e.target.value}`
-      )
-      .then((res) => {
-        setCountryData(res.data);
-      })
-      .catch((error: Error) => console.error(error));
-  };
-
-  const Select = () => {
-    return (
-      <select
-        className='select'
-        value={countryData.country}
-        onChange={handleChange}
-      >
-        {countries.map((country) => (
-          <option key={`key-${country}`} value={country}>
-            {country}
-          </option>
-        ))}
-      </select>
-    );
-  };
 
   if (loading) {
     return <Spinner />;
@@ -85,7 +33,14 @@ export const Country: React.FC = () => {
     return (
       <main className='country'>
         <h3>
-          <FontAwesomeIcon icon={faFlag} /> <Select />
+          <FontAwesomeIcon icon={faFlag} />{' '}
+          <Select
+            data={countryData}
+            countries={countries}
+            selectAction={(e: ChangeEvent<HTMLSelectElement>) =>
+              handleOnChange(e, setCountryData)
+            }
+          />
         </h3>
         <h4>Today's cases:</h4>
         <p>{dataFormat(countryData.todayCases)}</p>
