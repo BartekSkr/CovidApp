@@ -11,8 +11,11 @@
   width: 100%;
   opacity: 0.9;
   margin-bottom: 1rem;
-  background-color: black;
+  background-color: var(--navbar-background-color);
+  color: var(--font-color);
   margin-bottom: 2rem;
+  position: relative;
+  transition: background-color var(--default-transition);
 
   ul {
     list-style: none;
@@ -24,14 +27,16 @@
 
       .navbar-link {
         margin: 0 1rem;
-        color: var(--light-font-color);
+        color: var(--font-color);
         text-decoration: none;
+        transition: color var(--default-transition);
 
         &-active {
           margin: 0 1rem;
-          color: var(--light-font-color);
+          color: var(--font-color);
           text-decoration: none;
-          border-bottom: 1px solid var(--light-font-color);
+          border-bottom: 2px solid var(--font-color);
+          transition: color var(--default-transition);
         }
       }
 
@@ -39,6 +44,68 @@
         transform: scale(1.2);
         transition: all 0.2s ease-in-out;
       }
+    }
+  }
+
+  .switch {
+    position: absolute;
+    display: inline-block;
+    width: 3rem;
+    height: 1.4rem;
+    top: 2rem;
+    right: 2rem;
+
+    input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 0.7rem;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 1.2rem;
+        width: 1.2rem;
+        left: 0.1rem;
+        bottom: 0.1rem;
+        background-color: black;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 50%;
+      }
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(1.5rem);
+      -ms-transform: translateX(1.5rem);
+      transform: translateX(1.5rem);
+    }
+
+    .slider:after {
+      content: '\263C';
+      color: black;
+      display: block;
+      position: absolute;
+      transform: translate(0, -50%);
+      top: 50%;
+      right: 15%;
+      font-size: 1.1rem;
+    }
+
+    input:checked+.slider:after {
+      content: '\263E';
+      right: 60%;
+      font-size: 1rem;
     }
   }
 }

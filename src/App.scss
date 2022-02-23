@@ -10,7 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background: var(--main-background-color);
-  color: var(--light-font-color);
+  color: var(--font-color);
   letter-spacing: 0.12rem;
+  transition: color var(--default-transition);
 }

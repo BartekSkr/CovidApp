@@ -1,15 +1,21 @@
 import './Navbar.scss';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 interface DefaultProps {
   icon?: JSX.Element;
   title?: string;
+  darkTheme: boolean;
+  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Navbar: React.FC<DefaultProps> = ({ icon, title }) => {
+export const Navbar: React.FC<DefaultProps> = ({
+  icon,
+  title,
+  darkTheme,
+  setDarkTheme,
+}) => {
   return (
     <main className='navbar'>
       <h1>
@@ -37,6 +43,18 @@ export const Navbar: React.FC<DefaultProps> = ({ icon, title }) => {
           </NavLink>
         </li>
       </ul>
+      <label className='switch'>
+        <input type='checkbox' />
+        <div
+          className='slider'
+          onClick={() => {
+            setDarkTheme(!darkTheme);
+            darkTheme === true
+              ? (document.body.style.backgroundColor = 'rgb(41, 40, 40)')
+              : (document.body.style.backgroundColor = 'white');
+          }}
+        ></div>
+      </label>
     </main>
   );
 };
@@ -44,8 +62,4 @@ export const Navbar: React.FC<DefaultProps> = ({ icon, title }) => {
 Navbar.defaultProps = {
   title: 'COVID-19 info',
   icon: <FontAwesomeIcon icon={faVirus} />,
-};
-
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
 };

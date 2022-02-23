@@ -24,7 +24,7 @@ export const fetchGlobalData = (
     .catch((error: Error) => console.error(error));
 };
 
-//  fetch data for individual countries
+//  fetch data for individual country
 export const fetchCountryData = (
   setLoading: (isLoading: boolean) => void,
   setCountries: React.Dispatch<React.SetStateAction<string[]>>,

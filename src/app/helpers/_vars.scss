@@ -1,6 +1,14 @@
 :root {
-  --light-font-color: whitesmoke;
-  --main-background-color: rgb(41, 40, 40);
+  --font-color: whitesmoke;
+  --background-color: rgb(41, 40, 40);
+  --navbar-background-color: black;
+  --default-transition: 0.5s;
+}
+
+[data-theme='white'] {
+  --font-color: black;
+  --background-color: white;
+  --navbar-background-color: rgb(95, 95, 95);
 }
 
 %container {
@@ -8,4 +16,6 @@
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
+  color: var(--font-color);
+  transition: color var(--default-transition);
 }
