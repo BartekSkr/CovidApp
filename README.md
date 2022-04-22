@@ -1,11 +1,21 @@
-## General info
+### General info
 
 The application presents cases of covid disease in individual countries as well as in the world in general.
 
-## Technologies
+### Technologies
 
-App has been created with React.js. and TypeScript.
+- [Ract](https://create-react-app.dev/docs/adding-typescript)
+- [TypeScript](https://www.typescriptlang.org)
+- [SASS](https://sass-lang.com)
+- [COVID API](https://github.com/javieraviles/covidAPI)
 
-This project was bootstrapped with [Create React App](https://create-react-app.dev/docs/adding-typescript/).
+### Setup
 
-API used in this app is from [COVID API](https://github.com/javieraviles/covidAPI).
+To run the app open link [Covid App](https://netlify-covid-app.netlify.app)
+
+or run it locally:
+
+```
+$ npm install
+$ npm run start
+```
