@@ -16,6 +16,6 @@ To run the app open link [Covid App](https://netlify-covid-app.netlify.app)
 or run it locally:
 
 ```
-$ npm install
-$ npm run start
+$ yarn
+$ yarn start
 ```
