@@ -10,42 +10,36 @@ export const Navbar: React.FC<DefaultProps> = ({
   darkTheme,
   setDarkTheme,
 }) => {
+  const navbarTabs = [
+    { name: 'Cases', href: '/cases' },
+    { name: 'About', href: '/about' },
+  ];
+
   return (
-    <main className='navbar'>
+    <main className="navbar">
       <h1>
         {icon} {title}
       </h1>
       <ul>
-        <li className='navbar-li'>
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? 'navbar-link-active' : 'navbar-link'
-            }
-            to='/home'
-          >
-            Home
-          </NavLink>
-        </li>
-        <li className='navbar-li'>
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? 'navbar-link-active' : 'navbar-link'
-            }
-            to='/about'
-          >
-            About
-          </NavLink>
-        </li>
+        {navbarTabs.map((tab) => (
+          <li key={tab.name} className="navbar-li">
+            <NavLink
+              className={(navData) =>
+                navData.isActive ? 'navbar-link-active' : 'navbar-link'
+              }
+              to={tab.href}
+            >
+              {tab.name}
+            </NavLink>
+          </li>
+        ))}
       </ul>
-      <label className='switch'>
-        <input type='checkbox' />
+      <label className="switch">
+        <input type="checkbox" />
         <div
-          className='slider'
+          className="slider"
           onClick={() => {
             setDarkTheme(!darkTheme);
-            darkTheme === true
-              ? (document.body.style.backgroundColor = 'rgb(41, 40, 40)')
-              : (document.body.style.backgroundColor = 'white');
           }}
         ></div>
       </label>
