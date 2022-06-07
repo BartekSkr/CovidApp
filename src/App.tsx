@@ -8,7 +8,7 @@ import './styles/App.scss';
 import { Navbar } from './components/Navbar/Navbar';
 import { PageNotFound } from './pages/404-page';
 import { About } from './pages/About';
-import { Home } from './pages/Home';
+import { Cases } from './pages/Cases';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         <Navbar setDarkTheme={setIsDarkTheme} darkTheme={isDarkTheme} />
         <Routes>
           <Route path="/" element={<Navigate to="/cases" />} />
-          <Route path="/cases" element={<Home />} />
+          <Route path="/cases" element={<Cases />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

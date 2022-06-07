@@ -3,13 +3,13 @@ import { Country } from '../components/cases/Country';
 import { Global } from '../components/cases/Global';
 import './Pages.scss';
 
-export const Home:React.FC = () => {
+export const Cases: React.FC = () => {
   useEffect(() => {
-    document.title = 'CovidApp - Home';
+    document.title = 'CovidApp - Cases';
   }, []);
 
   return (
-    <main className='container'>
+    <main className="container">
       <Global />
       <Country />
     </main>
