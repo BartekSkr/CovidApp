@@ -1,4 +1,4 @@
-@import '../../utils/vars';
+@import '../../styles/vars';
 
 .navbar {
   display: flex;
@@ -73,19 +73,19 @@
 
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         height: 1.2rem;
         width: 1.2rem;
         left: 0.1rem;
         bottom: 0.1rem;
         background-color: black;
-        -webkit-transition: .4s;
-        transition: .4s;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
         border-radius: 50%;
       }
     }
 
-    input:checked+.slider:before {
+    input:checked + .slider:before {
       -webkit-transform: translateX(1.5rem);
       -ms-transform: translateX(1.5rem);
       transform: translateX(1.5rem);
@@ -102,7 +102,7 @@
       font-size: 1.1rem;
     }
 
-    input:checked+.slider:after {
+    input:checked + .slider:after {
       content: '\263E';
       right: 60%;
       font-size: 1rem;

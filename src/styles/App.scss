@@ -1,4 +1,4 @@
-@import '../src/utils/vars';
+@import './vars';
 
 * {
   box-sizing: border-box;
@@ -12,5 +12,5 @@ body {
   line-height: 1.6;
   color: var(--font-color);
   letter-spacing: 0.12rem;
-  transition: color var(--default-transition);
+  transition: all var(--default-transition);
 }

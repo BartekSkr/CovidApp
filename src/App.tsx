@@ -4,7 +4,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-import './App.scss';
+import './styles/App.scss';
 import { Navbar } from './components/Navbar/Navbar';
 import { PageNotFound } from './pages/404-page';
 import { About } from './pages/About';
@@ -16,19 +16,19 @@ function App() {
 
   useEffect(() => {
     isDarkTheme === true
-      ? (document.body.style.backgroundColor = 'rgb(41, 40, 40)')
+      ? (document.body.style.backgroundColor = 'black')
       : (document.body.style.backgroundColor = 'white');
   }, [isDarkTheme]);
 
   return (
-    <div className='app' data-theme={isDarkTheme === true ? 'dark' : 'white'}>
+    <div className="app" data-theme={isDarkTheme === true ? 'dark' : 'white'}>
       <Router>
         <Navbar setDarkTheme={setIsDarkTheme} darkTheme={isDarkTheme} />
         <Routes>
-          <Route path='/' element={<Navigate to='/home' />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='*' element={<PageNotFound />} />
+          <Route path="/" element={<Navigate to="/cases" />} />
+          <Route path="/cases" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
     </div>
