@@ -12,7 +12,7 @@
   opacity: 0.9;
   margin-bottom: 1rem;
   background-color: var(--navbar-background-color);
-  color: var(--font-color);
+  color: whitesmoke;
   margin-bottom: 2rem;
   position: relative;
   transition: background-color var(--default-transition);
@@ -27,15 +27,15 @@
 
       .navbar-link {
         margin: 0 1rem;
-        color: var(--font-color);
+        color: whitesmoke;
         text-decoration: none;
         transition: color var(--default-transition);
 
         &-active {
           margin: 0 1rem;
-          color: var(--font-color);
+          color: whitesmoke;
           text-decoration: none;
-          border-bottom: 2px solid var(--font-color);
+          border-bottom: 2px solid whitesmoke;
           transition: color var(--default-transition);
         }
       }
