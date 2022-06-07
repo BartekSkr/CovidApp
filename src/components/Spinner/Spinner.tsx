@@ -1,6 +1,6 @@
 import './Spinner.scss';
 
-export const Spinner = (): JSX.Element => {
+export const Spinner:React.FC = () => {
   return (
     <main className='spinner'>
       <div></div>

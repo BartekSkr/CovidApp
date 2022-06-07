@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { Country } from '../cases/Country';
-import { Global } from '../cases/Global';
+import { Country } from '../components/cases/Country';
+import { Global } from '../components/cases/Global';
 import './Pages.scss';
 
-export const Home = () => {
+export const Home:React.FC = () => {
   useEffect(() => {
     document.title = 'CovidApp - Home';
   }, []);

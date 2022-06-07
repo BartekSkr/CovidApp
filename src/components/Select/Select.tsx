@@ -1,12 +1,5 @@
 import './Select.scss';
-import { ChangeEvent } from 'react';
-import { CountryDataInterface } from '../../../../interfaces/dataInterfaces';
-
-interface SelectProps {
-  data: CountryDataInterface['countryData'];
-  countries: string[];
-  selectAction: (e: ChangeEvent<HTMLSelectElement>) => void;
-}
+import { SelectProps } from './types';
 
 export const Select: React.FC<SelectProps> = ({
   data,

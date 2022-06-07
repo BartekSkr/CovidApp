@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './Pages.scss';
 
-export const About = () => {
+export const About:React.FC = () => {
   useEffect(() => {
     document.title = 'CovidApp - About';
   }, []);

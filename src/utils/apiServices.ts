@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CountryDataInterface } from '../interfaces/dataInterfaces';
+import { CountryDataInterface } from '../types';
 
 //  fetch global data
 export const fetchGlobalData = (

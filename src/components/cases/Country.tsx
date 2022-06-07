@@ -2,12 +2,12 @@ import './Cases.scss';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ChangeEvent, useEffect, useState } from 'react';
-import { Spinner } from '../ui/common/Spinner/Spinner';
-import { dataFormat } from '../../helpers/dataServices';
-import { CountryDataInterface } from '../../interfaces/dataInterfaces';
-import { Select } from '../ui/common/Select/Select';
-import { handleOnChange } from '../../helpers/selectServices';
-import { fetchCountryData } from '../../helpers/apiServices';
+import { Spinner } from '../Spinner/Spinner';
+import { dataFormat } from '../../utils/dataServices';
+import { CountryDataInterface } from '../../types';
+import { Select } from '../Select/Select';
+import { handleOnChange } from '../../utils/selectServices';
+import { fetchCountryData } from '../../utils/apiServices';
 
 export const Country: React.FC = () => {
   const [countryData, setCountryData] = useState<

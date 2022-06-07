@@ -2,13 +2,7 @@ import './Navbar.scss';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
-
-interface DefaultProps {
-  icon?: JSX.Element;
-  title?: string;
-  darkTheme: boolean;
-  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { DefaultProps } from './types';
 
 export const Navbar: React.FC<DefaultProps> = ({
   icon,

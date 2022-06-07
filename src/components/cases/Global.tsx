@@ -2,10 +2,10 @@ import './Cases.scss';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
-import { Spinner } from '../ui/common/Spinner/Spinner';
-import { dataFormat } from '../../helpers/dataServices';
-import { fetchGlobalData } from '../../helpers/apiServices';
-import { GlobalDataInterface } from '../../interfaces/dataInterfaces';
+import { Spinner } from '../Spinner/Spinner';
+import { dataFormat } from '../../utils/dataServices';
+import { fetchGlobalData } from '../../utils/apiServices';
+import { GlobalDataInterface } from '../../types';
 
 export const Global: React.FC = () => {
   const [globalData, setGlobalData] = useState<

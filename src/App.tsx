@@ -5,10 +5,10 @@ import {
   Routes,
 } from 'react-router-dom';
 import './App.scss';
-import { Navbar } from './app/components/ui/common/Navbar/Navbar';
-import { PageNotFound } from './app/components/pages/404-page';
-import { About } from './app/components/pages/About';
-import { Home } from './app/components/pages/Home';
+import { Navbar } from './components/Navbar/Navbar';
+import { PageNotFound } from './pages/404-page';
+import { About } from './pages/About';
+import { Home } from './pages/Home';
 import { useEffect, useState } from 'react';
 
 function App() {

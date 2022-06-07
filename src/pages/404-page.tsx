@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './Pages.scss';
 
-export const PageNotFound = () => {
+export const PageNotFound:React.FC = () => {
   useEffect(() => {
     document.title = 'Error 404 (Not Found)';
   }, []);
