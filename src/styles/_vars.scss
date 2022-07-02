@@ -10,12 +10,3 @@
   --background-color: white;
   --navbar-background-color: rgb(95, 95, 95);
 }
-
-%container {
-  max-width: 500px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
-  color: var(--font-color);
-  transition: color var(--default-transition);
-}

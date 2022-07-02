@@ -1,4 +1,3 @@
-import './Cases.scss';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ChangeEvent, useEffect, useState } from 'react';
@@ -31,8 +30,8 @@ export const Country: React.FC = () => {
     return <Spinner />;
   } else {
     return (
-      <main className='country'>
-        <h3>
+      <main className="border p-4 h-300 mx-auto md:w-percent-48">
+        <h3 className="relative">
           <FontAwesomeIcon icon={faFlag} />{' '}
           <Select
             data={countryData}
@@ -43,15 +42,15 @@ export const Country: React.FC = () => {
           />
         </h3>
         <h4>Today's cases:</h4>
-        <p>{dataFormat(countryData.todayCases)}</p>
+        <p className="ml-3">{dataFormat(countryData.todayCases)}</p>
         <h4>Today's deaths:</h4>
-        <p>{dataFormat(countryData.todayDeaths)}</p>
+        <p className="ml-3">{dataFormat(countryData.todayDeaths)}</p>
         <h4>Total cases:</h4>
-        <p>{dataFormat(countryData.cases)}</p>
+        <p className="ml-3">{dataFormat(countryData.cases)}</p>
         <h4>Total deaths:</h4>
-        <p>{dataFormat(countryData.deaths)}</p>
+        <p className="ml-3">{dataFormat(countryData.deaths)}</p>
         <h4>Total recovered:</h4>
-        <p>{dataFormat(countryData.recovered)}</p>
+        <p className="ml-3">{dataFormat(countryData.recovered)}</p>
       </main>
     );
   }

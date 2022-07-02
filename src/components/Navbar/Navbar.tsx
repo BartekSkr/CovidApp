@@ -1,4 +1,4 @@
-import './Navbar.scss';
+import './ThemeToggle.scss';
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
@@ -16,16 +16,21 @@ export const Navbar: React.FC<DefaultProps> = ({
   ];
 
   return (
-    <main className="navbar">
-      <h1>
+    <main className="block justify-center text-center py-4 mb-8 text-slate-300 relative transition-all bg-navbar-background">
+      <h1 className="text-3xl font-bold">
         {icon} {title}
       </h1>
-      <ul>
+      <ul className="list-none flex justify-center">
         {navbarTabs.map((tab) => (
-          <li key={tab.name} className="navbar-li">
+          <li
+            key={tab.name}
+            className="duration-0.5 hover:scale-1.2 ease-in-out transition-all"
+          >
             <NavLink
               className={(navData) =>
-                navData.isActive ? 'navbar-link-active' : 'navbar-link'
+                navData.isActive
+                  ? 'my-0 mx-4 duration-0.5 border-b-2'
+                  : 'my-0 mx-4 duration-0.5'
               }
               to={tab.href}
             >
@@ -34,7 +39,7 @@ export const Navbar: React.FC<DefaultProps> = ({
           </li>
         ))}
       </ul>
-      <label className="switch">
+      {/* <label className="switch">
         <input type="checkbox" />
         <div
           className="slider"
@@ -42,7 +47,7 @@ export const Navbar: React.FC<DefaultProps> = ({
             setDarkTheme(!darkTheme);
           }}
         ></div>
-      </label>
+      </label> */}
     </main>
   );
 };

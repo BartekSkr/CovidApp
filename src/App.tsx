@@ -1,10 +1,10 @@
+import './styles/App.scss';
 import {
   BrowserRouter as Router,
   Navigate,
   Route,
   Routes,
 } from 'react-router-dom';
-import './styles/App.scss';
 import { Navbar } from './components/Navbar/Navbar';
 import { PageNotFound } from './pages/404-page';
 import { About } from './pages/About';
@@ -21,7 +21,10 @@ function App() {
   }, [isDarkTheme]);
 
   return (
-    <div className="app" data-theme={isDarkTheme === true ? 'dark' : 'white'}>
+    <div
+      className="font-sans text-lg leading-6 tracking-widest duration-0.5"
+      // data-theme={isDarkTheme === true ? 'dark' : 'white'}
+    >
       <Router>
         <Navbar setDarkTheme={setIsDarkTheme} darkTheme={isDarkTheme} />
         <Routes>

@@ -1,4 +1,3 @@
-import './Cases.scss';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
@@ -27,20 +26,20 @@ export const Global: React.FC = () => {
     return <Spinner />;
   } else {
     return (
-      <main className='global'>
-        <h3>
+      <main className="border p-4 h-300 mx-auto mb-8 md:w-percent-48">
+        <h3 className="relative">
           <FontAwesomeIcon icon={faGlobe} /> WORLD
         </h3>
         <h4>Today's cases</h4>
-        <p>{dataFormat(globalData.todayCases)}</p>
+        <p className="ml-3">{dataFormat(globalData.todayCases)}</p>
         <h4>Today's deaths</h4>
-        <p>{dataFormat(globalData.todayDeaths)}</p>
+        <p className="ml-3">{dataFormat(globalData.todayDeaths)}</p>
         <h4>Total cases:</h4>
-        <p>{dataFormat(globalData.cases)}</p>
+        <p className="ml-3">{dataFormat(globalData.cases)}</p>
         <h4>Total deaths:</h4>
-        <p>{dataFormat(globalData.deaths)}</p>
+        <p className="ml-3">{dataFormat(globalData.deaths)}</p>
         <h4>Total recovered:</h4>
-        <p>{dataFormat(globalData.recovered)}</p>
+        <p className="ml-3">{dataFormat(globalData.recovered)}</p>
       </main>
     );
   }
