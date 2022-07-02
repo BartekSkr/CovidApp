@@ -7,7 +7,7 @@ The application presents cases of covid disease in individual countries as well 
 - [Ract](https://create-react-app.dev/docs/adding-typescript)
 - [TypeScript](https://www.typescriptlang.org)
 - [SASS](https://sass-lang.com)
-- [Tailwind CSS](https://tailwindcss.com/docs/translate)
+- [Tailwind CSS](https://tailwindcss.com)
 - [COVID API](https://github.com/javieraviles/covidAPI)
 
 ### Setup
