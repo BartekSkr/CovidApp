@@ -26,7 +26,7 @@ export const Global: React.FC = () => {
     return <Spinner />;
   } else {
     return (
-      <main className="border p-4 h-300 mx-auto mb-8 md:w-percent-48">
+      <>
         <h3 className="relative">
           <FontAwesomeIcon icon={faGlobe} /> WORLD
         </h3>
@@ -40,7 +40,7 @@ export const Global: React.FC = () => {
         <p className="ml-3">{dataFormat(globalData.deaths)}</p>
         <h4>Total recovered:</h4>
         <p className="ml-3">{dataFormat(globalData.recovered)}</p>
-      </main>
+      </>
     );
   }
 };

@@ -10,7 +10,7 @@ export const Navbar: React.FC<DefaultProps> = ({ icon, title }) => {
   ];
 
   return (
-    <main className="block justify-center text-center py-8 mb-8 text-white relative transition-all bg-navbar-background">
+    <main className="block justify-center text-center py-8 mb-8 text-white relative transition-all bg-navbar-background z-10">
       <h1 className="text-3xl font-bold mb-2">
         {icon} {title}
       </h1>

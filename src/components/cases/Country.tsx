@@ -30,7 +30,7 @@ export const Country: React.FC = () => {
     return <Spinner />;
   } else {
     return (
-      <main className="border p-4 h-300 mx-auto md:w-percent-48">
+      <>
         <h3 className="relative">
           <FontAwesomeIcon icon={faFlag} />{' '}
           <Select
@@ -51,7 +51,7 @@ export const Country: React.FC = () => {
         <p className="ml-3">{dataFormat(countryData.deaths)}</p>
         <h4>Total recovered:</h4>
         <p className="ml-3">{dataFormat(countryData.recovered)}</p>
-      </main>
+      </>
     );
   }
 };

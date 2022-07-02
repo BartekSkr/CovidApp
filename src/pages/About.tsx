@@ -8,10 +8,10 @@ export const About: React.FC = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="mx-auto w-500 py-0 px-8 text-white h-80"
+      initial={{ y: 'calc(80vh)', opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: 'calc(50vh)', opacity: -2 }}
+      className="mx-auto py-0 px-8 text-white h-80 md:w-500"
     >
       <h1 className="mb-4 py-0 px-4 text-4xl">About this App</h1>
       <p className="mb-4 py-0 px-4">
