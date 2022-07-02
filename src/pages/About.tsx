@@ -11,7 +11,7 @@ export const About: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="mx-auto w-500 py-0 px-8 text-slate-300 h-80"
+      className="mx-auto w-500 py-0 px-8 text-white h-80"
     >
       <h1 className="mb-4 py-0 px-4 text-4xl">About this App</h1>
       <p className="mb-4 py-0 px-4">
@@ -25,8 +25,7 @@ export const About: React.FC = () => {
           target="blank"
           href="https://create-react-app.dev/docs/getting-started"
         >
-          {' '}
-          React.js. and TypeScript.{' '}
+          TypeScript.
         </a>
       </p>
       <p className="mb-4 py-0 px-4">
