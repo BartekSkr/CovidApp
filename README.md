@@ -9,6 +9,7 @@ The application presents cases of covid disease in individual countries as well 
 - [SASS](https://sass-lang.com)
 - [Tailwind CSS](https://tailwindcss.com)
 - [COVID API](https://github.com/javieraviles/covidAPI)
+- [Framer Motion](https://www.framer.com/docs/introduction)
 
 ### Setup
 
