@@ -12,7 +12,7 @@ export const PageNotFound: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="mx-auto w-500 py-0 px-8 text-white h-80"
+      className="mx-auto py-0 px-8 text-white h-80 md:w-500"
     >
       <h1 className="mb-4 py-0 px-4 text-4xl">404</h1>
       <h3 className="mb-4 py-0 px-4">Sorry, we couldn't find this page.</h3>
