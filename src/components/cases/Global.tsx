@@ -6,7 +6,7 @@ import { dataFormat } from '../../utils/dataServices';
 import { fetchGlobalData } from '../../utils/apiServices';
 import { GlobalDataInterface } from '../../types';
 
-export const Global: React.FC = () => {
+export const Global = () => {
   const [globalData, setGlobalData] = useState<
     GlobalDataInterface['globalData']
   >({

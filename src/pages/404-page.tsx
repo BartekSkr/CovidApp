@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-export const PageNotFound: React.FC = () => {
+export const PageNotFound = () => {
   useEffect(() => {
     document.title = 'Error 404 (Not Found)';
   }, []);

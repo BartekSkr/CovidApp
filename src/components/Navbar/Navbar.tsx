@@ -1,9 +1,9 @@
 import { faVirus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
-import { DefaultProps } from './types';
+import { NavbarProps } from './types';
 
-export const Navbar: React.FC<DefaultProps> = ({ icon, title }) => {
+export const Navbar = ({ icon, title }: NavbarProps) => {
   const navbarTabs = [
     { name: 'Cases', href: '/cases' },
     { name: 'About', href: '/about' },

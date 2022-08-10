@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-export const About: React.FC = () => {
+export const About = () => {
   useEffect(() => {
     document.title = 'CovidApp - About';
   }, []);

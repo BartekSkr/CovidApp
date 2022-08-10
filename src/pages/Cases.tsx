@@ -3,7 +3,7 @@ import { Country } from '../components/cases/Country';
 import { Global } from '../components/cases/Global';
 import { motion } from 'framer-motion';
 
-export const Cases: React.FC = () => {
+export const Cases = () => {
   useEffect(() => {
     document.title = 'CovidApp - Cases';
   }, []);

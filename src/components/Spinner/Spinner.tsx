@@ -1,4 +1,4 @@
-export const Spinner: React.FC = () => {
+export const Spinner = () => {
   return (
     <svg
       role="status"

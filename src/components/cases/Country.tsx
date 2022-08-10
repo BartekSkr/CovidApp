@@ -8,7 +8,7 @@ import { Select } from '../Select/Select';
 import { handleOnChange } from '../../utils/selectServices';
 import { fetchCountryData } from '../../utils/apiServices';
 
-export const Country: React.FC = () => {
+export const Country = () => {
   const [countryData, setCountryData] = useState<
     CountryDataInterface['countryData']
   >({
